@@ -1,0 +1,56 @@
+---
+title: "Boxplot com ggplot2"
+output: html_notebook
+---
+
+Criação de gráficos do tipo boxplot para o projeto UHE Sinop a partir de dados gerados por S2 Picofox.
+
+```{r}
+df <- read.csv('C:/Users/ediso/OneDrive/Doutorado e Sinop/Planilhas/pico_musc.csv',
+               sep = ';')
+
+library(ggplot2)
+library(ggpubr)
+library(cowplot)
+
+k <- ggboxplot(df, x = 'Sp', y = 'K', color = 'Sp', palette = 'aaas',
+               ylab = 'K (ppm)', xlab = FALSE)
+k <- k + theme(legend.title = element_blank(), legend.position = 'none')
+
+ca <- ggboxplot(df, x = 'Sp', y = 'Ca', color = 'Sp', palette = 'aaas', 
+                ylab = 'Ca (ppm)', xlab = FALSE)
+ca <- ca + theme(legend.title = element_blank(), legend.position = 'none')
+
+cr <- ggboxplot(df, x = 'Sp', y = 'Cr', color = 'Sp', palette = 'aaas',
+                ylab = 'Cr (ppm)', xlab = FALSE)
+cr <- cr + theme(legend.title = element_blank(), legend.position = 'none')
+
+mn <- ggboxplot(df, x = 'Sp', y = 'Mn', color = 'Sp', palette = 'aaas', 
+                ylab = 'Mn (ppm)', xlab = FALSE)
+mn <- mn + theme(legend.title = element_blank(), legend.position = 'none')
+
+fe <- ggboxplot(df, x = 'Sp', y = 'Fe', color = 'Sp', palette = 'aaas', 
+                ylab = 'Fe (ppm)', xlab = FALSE)
+fe <- fe + theme(legend.title = element_blank(), legend.position = 'none')
+
+zn <- ggboxplot(df, x = 'Sp', y = 'Zn', color = 'Sp', palette = 'aaas',
+                ylab = 'Zn (ppm)', xlab = FALSE)
+zn <- zn + theme(legend.title = element_blank(), legend.position = 'none')
+
+sr <- ggboxplot(df, x = 'Sp', y = 'Sr', color = 'Sp', palette = 'aaas', 
+                ylab = 'Sr (ppm)', xlab = FALSE)
+sr <- sr + theme(legend.title = element_blank(), legend.position = 'none')
+
+pb <- ggboxplot(df, x = 'Sp', y = 'Pb', color = 'Sp', palette = 'aaas', 
+                ylab = 'Pb (ppm)', xlab = FALSE)
+pb <- pb + theme(legend.title = element_blank(), legend.position = 'none')
+
+plot_grid(k , ca , cr , mn,
+          labels = c( 'A', 'B', 'C', 'D'),
+          ncol = 2, row = 2)
+
+plot_grid(fe , zn , sr, pb,
+          labels = c('E', 'F', 'G', 'H'),
+          ncol = 2, row = 2)
+```
+Ao juntar todos os gráficos em uma única imagem o resultado não ficou satisfatório. Por isso a divisão em duas imagens para posterior junção em outro software. Apesar da mensagem de erro o resultado não foi comprometido.
