@@ -1,12 +1,6 @@
----
-title: "Boxplot com ggplot2"
-output: html_notebook
----
+#Criação de gráficos do tipo boxplot para o projeto UHE Sinop a partir de dados gerados por S2 Picofox.
 
-Criação de gráficos do tipo boxplot para o projeto UHE Sinop a partir de dados gerados por S2 Picofox.
-
-```{r}
-df <- read.csv('C:/Users/ediso/OneDrive/Doutorado e Sinop/Planilhas/pico_musc.csv',
+df <- read.csv('C:/Planilhas/pico_musc.csv',
                sep = ';')
 
 library(ggplot2)
@@ -52,5 +46,5 @@ plot_grid(k , ca , cr , mn,
 plot_grid(fe , zn , sr, pb,
           labels = c('E', 'F', 'G', 'H'),
           ncol = 2, row = 2)
-```
-Ao juntar todos os gráficos em uma única imagem o resultado não ficou satisfatório. Por isso a divisão em duas imagens para posterior junção em outro software.
+          
+#Ao juntar todos os gráficos em uma única imagem o resultado não ficou satisfatório. Por isso a divisão em duas imagens para posterior junção em outro software.
