@@ -53,4 +53,4 @@ plot_grid(fe , zn , sr, pb,
           labels = c('E', 'F', 'G', 'H'),
           ncol = 2, row = 2)
 ```
-Ao juntar todos os gráficos em uma única imagem o resultado não ficou satisfatório. Por isso a divisão em duas imagens para posterior junção em outro software. Apesar da mensagem de erro o resultado não foi comprometido.
+Ao juntar todos os gráficos em uma única imagem o resultado não ficou satisfatório. Por isso a divisão em duas imagens para posterior junção em outro software.
